@@ -1,50 +1,841 @@
+/* Axiom Protection Systems website */
+
+
+/* Colours */
+
+:root {
+  --black: #161816;
+  --offWhite: #f2f1ec;
+  --green: #596153;
+  --stone: #b5b1a5;
+  --orange: #bc552f;
+  --grey: #747870;
+  --border: #d2d1cb;
+}
+
+
+/* Basic page stuff */
+
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: #111;
-  color: #eee;
-  font-family: "Fira Code", Menlo, Consolas, monospace;
-  height: 100vh;
+  margin: 0;
+  background-color: var(--offWhite);
+  color: var(--black);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-#terminal {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 16px;
-  background: #000;
-  border-radius: 4px;
-  box-shadow: 0 0 20px #000;
-  height: calc(100vh - 40px);
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+a {
+  color: inherit;
+}
+
+/* Header */
+
+header {
+  background: var(--offWhite);
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar {
+  min-height: 85px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin-top: 2px;
+  color: var(--grey);
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  color: var(--orange);
+}
+
+
+/* Hero */
+
+.hero {
+  background: var(--black);
+  color: white;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 42% 58%;
+  min-height: 570px;
+}
+
+.heroText {
+  padding-right: 50px;
+  display: flex;
+  justify-content: center;
   flex-direction: column;
 }
 
-#output {
-  flex: 1;
-  overflow-y: auto;
-  white-space: pre-wrap;
-  line-height: 1.4;
+.smallHeading {
+  color: #bfc3ba;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
-#input-line {
+.hero h1 {
+  font-size: 67px;
+  line-height: 0.93;
+  letter-spacing: -4px;
+  margin: 20px 0 30px 0;
+  text-transform: uppercase;
+}
+
+.heroDescription {
+  color: #c3c5c1;
+  line-height: 1.7;
+  max-width: 450px;
+  font-size: 15px;
+}
+
+.mainLink {
+  color: white;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 30px;
+  display: inline-block;
+  width: fit-content;
+  border-bottom: 1px solid white;
+  padding-bottom: 7px;
+}
+
+.mainLink span {
+  color: var(--orange);
+  margin-left: 8px;
+}
+
+
+/* Image areas */
+
+figure {
+  margin: 0;
+}
+
+.heroPhoto {
   display: flex;
+  flex-direction: column;
+  padding: 35px 0 25px 0;
+}
+
+.heroPhoto img,
+.productPhoto img,
+.detailPhoto img,
+.fieldPhoto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagePlaceholder {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  min-height: 400px;
+  border: 1px dashed #8c8f88;
+  text-align: center;
 }
 
-.prompt {
-  color: #6af06a;
+.imagePlaceholder span {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
-#cmd {
+.imagePlaceholder small {
+  margin-top: 10px;
+  color: #868b83;
+  font-size: 11px;
+}
+
+.darkPlaceholder {
   flex: 1;
-  background: transparent;
+  background: #242724;
+  border-color: #555951;
+}
+
+.lightPlaceholder {
+  background: #deddd7;
+}
+
+.detailPlaceholder {
+  background: #3d423c;
+  color: white;
+}
+
+.fieldPlaceholder {
+  min-height: 450px;
+  background: #4d524a;
+  color: white;
+}
+
+figcaption {
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+  color: #858981;
+}
+
+figcaption a {
+  color: inherit;
+}
+
+.hero figcaption {
+  color: #8e928c;
+}
+
+
+/* General section headings */
+
+.sectionLabel {
+  color: var(--orange);
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+h2 {
+  color: var(--black);
+  font-size: 46px;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin: 12px 0;
+}
+
+
+/* About */
+
+.about {
+  background: var(--offWhite);
+  padding: 90px 0;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 60px;
+}
+
+.aboutText {
+  max-width: 600px;
+  line-height: 1.8;
+  font-size: 16px;
+  color: #4f534d;
+}
+
+.aboutText p:first-child {
+  margin-top: 0;
+}
+
+.smallNote {
+  color: #858981;
+  font-size: 11px;
+  line-height: 1.6;
+  margin-top: 30px;
+}
+
+
+/* Main product */
+
+.productSection {
+  border-top: 1px solid var(--border);
+  padding: 80px 0 100px;
+  background: white;
+}
+
+.productHeading {
+  max-width: 650px;
+  margin-bottom: 50px;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: 55% 45%;
+}
+
+.productPhoto {
+  padding-right: 45px;
+}
+
+.productDescription {
+  border-left: 1px solid var(--border);
+  padding-left: 45px;
+}
+
+.productCode {
+  color: var(--orange);
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-top: 0;
+}
+
+.productDescription h3 {
+  font-size: 30px;
+  margin: 8px 0 20px;
+}
+
+.productDescription > p {
+  color: #62665f;
+  line-height: 1.7;
+}
+
+.productFacts {
+  margin-top: 45px;
+  border-top: 1px solid var(--border);
+}
+
+.productFacts div {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.productFacts span {
+  color: var(--orange);
+  font-size: 10px;
+  margin-right: 20px;
+}
+
+.productFacts strong {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.productFacts p {
+  margin: 8px 0 0 40px;
+  color: #747870;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* Design section */
+
+.designSection {
+  background: var(--green);
+  color: white;
+  padding: 75px 0;
+}
+
+.designGrid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  align-items: center;
+}
+
+.detailPhoto {
+  padding-right: 60px;
+}
+
+.designText {
+  padding: 30px 0;
+}
+
+.designText .sectionLabel {
+  color: #e09271;
+}
+
+.designText h2 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 54px;
+}
+
+.designText > p {
+  color: #e0e2dc;
+  line-height: 1.7;
+  font-size: 14px;
+  max-width: 420px;
+}
+
+
+/* Configurator */
+
+.configureSection {
+  padding: 90px 0 100px;
+  background: var(--offWhite);
+}
+
+.configureHeading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 45px;
+}
+
+.configureHeading > p {
+  color: #62665f;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.configurator {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  background: white;
+  border: 1px solid var(--border);
+}
+
+.formSide {
+  padding: 40px;
+}
+
+.formSide h3 {
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.formItem label {
+  display: block;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.formItem select,
+.formItem input {
+  width: 100%;
+  height: 47px;
+  border: 1px solid #b9bbb5;
+  border-radius: 0;
+  background: white;
+  padding: 8px 10px;
+  color: var(--black);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.formItem select:focus,
+.formItem input:focus,
+button:focus,
+a:focus {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+
+/* Accessories */
+
+.extras {
+  margin-top: 35px;
+  border-top: 1px solid var(--border);
+}
+
+.extrasTitle {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding-top: 18px;
+}
+
+.extraOption {
+  margin: 0;
+  padding: 15px 2px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.extraOption input {
+  accent-color: var(--green);
+  margin-right: 8px;
+}
+
+.extraOption > span:last-child {
+  color: #787d75;
+}
+
+
+/* Buttons */
+
+.buttons {
+  margin-top: 17px;
+}
+
+button {
+  background: var(--black);
+  color: white;
   border: none;
-  outline: none;
-  color: #eee;
-  font: inherit;
+  padding: 13px 18px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--green);
+}
+
+.resetButton {
+  margin-left: 8px;
+  background: white;
+  color: var(--black);
+  border: 1px solid #aaa;
+}
+
+.resetButton:hover {
+  background: #e5e4df;
+}
+
+#errorMessage {
+  color: #a33c28;
+  min-height: 16px;
+  font-size: 11px;
+}
+
+
+/* Price section */
+
+.priceSide {
+  background: var(--black);
+  color: white;
+  padding: 40px;
+}
+
+.priceTop {
+  color: #92968f;
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-top: 0;
+  margin-bottom: 65px;
+}
+
+.priceLabel {
+  color: #a9ada5;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.totalPrice {
+  font-size: 53px;
+  font-weight: bold;
+  letter-spacing: -2px;
+  padding: 8px 0 25px;
+  border-bottom: 1px solid #444842;
+}
+
+.priceBreakdown {
+  padding-top: 15px;
+}
+
+.priceBreakdown div {
+  padding: 11px 0;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  color: #b7bbb3;
+  font-size: 12px;
+}
+
+.priceBreakdown strong {
+  color: white;
+}
+
+.quantityRow {
+  border-top: 1px solid #444842;
+  margin-top: 10px;
+  padding-top: 20px !important;
+}
+
+.priceNotice {
+  margin-top: 35px;
+  padding: 15px;
+  border-left: 3px solid var(--orange);
+  background: #222522;
+  font-size: 11px;
+  color: #b8bcb4;
+  line-height: 1.5;
+}
+
+.priceNotice strong {
+  color: white;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.priceNotice p {
+  margin-bottom: 0;
+}
+
+
+/* Final field image */
+
+.fieldSection {
+  background: var(--black);
+  padding: 75px 0 55px;
+  color: white;
+}
+
+.fieldPhoto {
+  width: 100%;
+}
+
+.fieldText {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.fieldText span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #999d96;
+}
+
+.fieldText strong {
+  font-size: 28px;
+  letter-spacing: -1px;
+}
+
+
+/* Footer */
+
+footer {
+  background: #0c0d0c;
+  color: white;
+  padding: 45px 0;
+  border-top: 1px solid #333633;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.footerLogo {
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.footerLogo span {
+  display: block;
+  color: #81857e;
+  font-size: 7px;
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+
+footer p {
+  color: #7e827b;
+  margin: 4px 0;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-align: right;
+}
+
+
+/* Tablet */
+
+@media screen and (max-width: 850px) {
+
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroText {
+    padding: 70px 0 40px;
+  }
+
+  .heroPhoto {
+    min-height: 430px;
+  }
+
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .productGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .productPhoto {
+    padding: 0;
+    margin-bottom: 50px;
+  }
+
+  .productDescription {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding: 35px 0 0;
+  }
+
+  .designGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .detailPhoto {
+    padding: 0;
+  }
+
+  .designText {
+    padding-top: 50px;
+  }
+
+  .configureHeading {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .configurator {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* Mobile */
+
+@media screen and (max-width: 550px) {
+
+  .container {
+    width: 92%;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .topbar {
+    min-height: 70px;
+  }
+
+  .hero h1 {
+    font-size: 47px;
+    letter-spacing: -2px;
+  }
+
+  h2 {
+    font-size: 35px;
+  }
+
+  .heroGrid {
+    min-height: auto;
+  }
+
+  .darkPlaceholder {
+    min-height: 340px;
+  }
+
+  .about {
+    padding: 65px 0;
+  }
+
+  .productSection {
+    padding: 65px 0;
+  }
+
+  .designText h2 {
+    font-size: 43px;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formSide,
+  .priceSide {
+    padding: 25px 20px;
+  }
+
+  .priceTop {
+    margin-bottom: 45px;
+  }
+
+  .totalPrice {
+    font-size: 43px;
+  }
+
+  .extraOption {
+    align-items: flex-start;
+  }
+
+  .extraOption > span:last-child {
+    font-size: 11px;
+  }
+
+  .fieldPlaceholder {
+    min-height: 300px;
+  }
+
+  .fieldText {
+    display: block;
+  }
+
+  .fieldText strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 22px;
+  }
+
+  .footerContent {
+    display: block;
+  }
+
+  footer .footerContent > div:last-child {
+    margin-top: 25px;
+  }
+
+  footer p {
+    text-align: left;
+  }
+
 }
