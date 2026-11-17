@@ -1,7 +1,42 @@
-Hey look you found my site, how quaint.
-I mainly use this to show off cool stuff or my recent project(s).
+# Sanderson Digital
 
-It is a very causal repository and the commits are strange and wonderful, do not judge me on anything you see back here in the backend. 
-This is a very wishy washy zone and is subject to change at a moments notice. 
+Personal portfolio website for Tyler Sanderson.
 
-tysm
+The site brings together my technical background, selected projects,
+professional experience and personal interests as I transition from
+British Army Signals into civilian work.
+
+## Live Site
+
+https://sandersondigital.uk
+
+## Built With
+
+- HTML5
+- CSS3
+- GitHub Pages
+
+The site is intentionally built without a front-end framework or
+content management system.
+
+## Projects
+
+The portfolio currently includes:
+
+- Axiom Protection Systems
+- The Long Front
+- England & Wales Criminal Justice Overhaul
+
+## Repository Structure
+
+- `index.html` - page content and structure
+- `style.css` - layout, styling and responsive design
+- `images/` - site imagery and Sanderson Digital branding
+
+## Author
+
+Tyler Sanderson
+
+Bristol, United Kingdom
+
+GitHub: https://github.com/T-SandersonDigital
