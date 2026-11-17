@@ -302,6 +302,122 @@ h2 {
     border-color: var(--red);
 }
 
+/* Other projects */
+
+.otherProjects {
+    margin-top: 90px;
+    border-top: 3px solid var(--black);
+}
+
+.otherProjectsHeading {
+    padding: 25px 0 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    gap: 30px;
+}
+
+.otherProjectsHeading p {
+    margin: 0;
+}
+
+.otherProjectsHeading > p:last-child {
+    color: var(--grey);
+
+    font-size: 12px;
+}
+
+
+.smallProject {
+    min-height: 190px;
+
+    padding: 35px 0;
+
+    display: grid;
+    grid-template-columns: 70px 1.2fr 1.6fr 140px;
+
+    gap: 35px;
+
+    align-items: start;
+
+    border-top: 1px solid var(--border);
+}
+
+.smallProject:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+
+.smallProjectNumber {
+    color: var(--red);
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+.smallProjectTitle p {
+    margin: 0 0 12px;
+
+    color: var(--grey);
+
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+}
+
+
+.smallProjectTitle h3 {
+    max-width: 300px;
+
+    margin: 0;
+
+    font-size: 22px;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+}
+
+
+.smallProjectDescription {
+    max-width: 430px;
+}
+
+.smallProjectDescription p {
+    margin: 0;
+
+    color: var(--grey);
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+.projectStatus {
+    justify-self: end;
+
+    padding: 7px 9px;
+
+    border: 1px solid var(--border);
+
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+
+    white-space: nowrap;
+}
+
+
+.activeStatus {
+    color: #56634f;
+    border-color: #9ba595;
+}
+
+
+.archivedStatus {
+    color: #858984;
+}
 
 /* Project imagery */
 
@@ -338,34 +454,8 @@ h2 {
     object-fit: contain;
 }
 
-.projectImageLabel {
-    position: absolute;
-    left: 20px;
-    bottom: 20px;
-
-    padding: 10px 13px;
-
-    background: #161816;
-    color: #f2f1ec;
-
-    font-size: 9px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
 .projectImage:hover img {
     transform: scale(1.015);
-}
-
-
-.longFrontImage {
-    background: #344039;
-    color: #e6e3d7;
-}
-
-.justiceImage {
-    background: #243541;
-    color: white;
 }
 
 
@@ -408,8 +498,7 @@ h2 {
 /* Experience */
 
 .experienceSection {
-    padding: 100px 0;
-
+    padding: 85px 0;
     background: var(--dark);
     color: white;
 }
@@ -463,6 +552,25 @@ h2 {
     letter-spacing: 1.5px;
 }
 
+.experienceDescription p {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.experienceDescription p:last-child {
+    margin-bottom: 0;
+}
+
+.experienceTransition {
+    display: inline-block;
+    margin-top: 25px;
+
+    color: #bb7768;
+
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
 
 /* Capabilities */
 
@@ -499,9 +607,10 @@ h2 {
 }
 
 .capabilityGrid h3 {
-    margin: 85px 0 15px;
+    margin: 70px 0 15px;
 
     font-size: 21px;
+    line-height: 1.15;
 }
 
 .capabilityGrid p {
@@ -617,12 +726,28 @@ footer {
 .footerContent {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     gap: 30px;
 }
 
-.footerContent strong {
-    font-size: 14px;
+.footerBrand {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.footerMark {
+    width: 38px;
+    height: 38px;
+
+    display: block;
+}
+
+.footerBrand strong {
+    font-size: 12px;
+    letter-spacing: 1.5px;
 }
 
 .footerContent p {
@@ -641,7 +766,6 @@ footer {
 .footerJoke {
     color: #535653 !important;
 }
-
 
 /* Tablet */
 
@@ -712,6 +836,28 @@ footer {
         justify-content: flex-start;
     }
 
+    .otherProjectsHeading {
+        display: block;
+    }
+
+    .otherProjectsHeading > p:last-child {
+        margin-top: 8px;
+    }
+
+    .smallProject {
+        grid-template-columns: 50px 1fr;
+        gap: 25px;
+    }
+
+    .smallProjectDescription {
+        grid-column: 2;
+    }
+
+    .projectStatus {
+        grid-column: 2;
+        justify-self: start;
+    }
+
 }
 
 
@@ -779,10 +925,6 @@ footer {
         min-height: 280px;
     }
 
-    .projectImage span {
-        font-size: 25px;
-    }
-
     .aboutSection,
     .experienceSection,
     .capabilitiesSection,
@@ -826,4 +968,34 @@ footer {
         text-align: left;
     }
 
+    .otherProjects {
+        margin-top: 65px;
+    }
+
+    .smallProject {
+        display: block;
+        min-height: auto;
+        padding: 30px 0;
+    }
+
+    .smallProjectNumber {
+        margin-bottom: 18px;
+    }
+
+    .smallProjectTitle h3 {
+        font-size: 21px;
+    }
+
+    .smallProjectDescription {
+        margin-top: 20px;
+    }
+
+    .projectStatus {
+        display: inline-block;
+        margin-top: 22px;
+    }
+    .footerMark {
+        width: 34px;
+        height: 34px;
+    }
 }
