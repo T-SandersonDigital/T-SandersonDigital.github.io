@@ -326,6 +326,18 @@ h2 {
     transition: transform 0.3s ease;
 }
 
+.axiomImage {
+    background: #f2f0ea;
+    display: flex;
+    align-items: center;
+}
+
+.axiomImage img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
 .projectImageLabel {
     position: absolute;
     left: 20px;
