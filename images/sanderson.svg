@@ -1,0 +1,50 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512"
+    role="img"
+    aria-label="Sanderson Digital logo"
+>
+    <!-- Background -->
+    <rect
+        width="512"
+        height="512"
+        rx="64"
+        fill="#151716"
+    />
+
+    <!-- Upper signal -->
+    <path
+        d="
+            M120 112
+            H408
+            L366 184
+            H120
+            Z
+        "
+        fill="#F2F0EA"
+    />
+
+    <!-- Centre signal -->
+    <path
+        d="
+            M146 220
+            H366
+            L408 292
+            H188
+            Z
+        "
+        fill="#A74737"
+    />
+
+    <!-- Lower signal -->
+    <path
+        d="
+            M146 328
+            H392
+            L350 400
+            H104
+            Z
+        "
+        fill="#F2F0EA"
+    />
+</svg>
