@@ -392,6 +392,16 @@ h2 {
   max-width: 420px;
 }
 
+.footerInfo {
+    max-width: 500px;
+}
+
+.copyrightNote {
+    margin-top: 15px;
+    color: #696d67;
+    font-size: 9px;
+    line-height: 1.5;
+}
 
 /* Configurator */
 
